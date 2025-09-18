@@ -24,7 +24,7 @@ explore: order_items {
     sql_on: ${order_items.user_id} = ${users.id} ;;
   }
 
-  # Orders header (many order_items -> one order)
+  # Orders (many order_items -> one order)
   join: orders {
     type: left_outer
     relationship: many_to_one
