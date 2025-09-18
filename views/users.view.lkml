@@ -59,8 +59,9 @@ view: users {
     sql: ${TABLE}.traffic_source ;;
   }
 
-  dimension: created_at {
-    type: date_time
+  dimension_group: created_at {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
 }
