@@ -10,9 +10,8 @@ datagroup: kinaxis_default_datagroup {
 }
 
 persist_with: kinaxis_default_datagroup
+# ---------- FACT: Order items ----
 
-# ---- Explores ----
-# ---------- FACT: Order Items ----------
 explore: order_items {
   from: order_items
   label: "Order Items (Fact)"
@@ -45,7 +44,7 @@ explore: order_items {
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
   }
 }
-# ---------- FACT: Events ----------
+# ---------- FACT: Events ----
   explore: events {
     from: events
     label: "Events (Fact)"
