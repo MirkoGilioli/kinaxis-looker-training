@@ -16,6 +16,15 @@ explore: events {
     relationship: many_to_one
     sql_on: ${events.user_id} = ${users.id} ;;
   }
+
+  join: order_by_user {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${events.user_id} = ${order_by_user.user} ;;
+  }
+
+
+
 }
 
 explore: order_items {
@@ -44,4 +53,10 @@ explore: order_items {
     relationship: many_to_one
     sql_on: ${inventory_items.id} = ${order_items.inventory_item_id} ;;
   }
+
+
+
+
+
+
 }
