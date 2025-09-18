@@ -44,4 +44,9 @@ explore: events {
     sql_on: ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+  join: user_order_details {
+    type: left_outer
+    sql_on: ${events.user_id} = ${user_order_details.user_id} ;;
+    relationship: many_to_one
+  }
 }
