@@ -22,6 +22,7 @@ view: products {
     sql: ${TABLE}.distribution_center_id ;;
   }
   dimension: id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -37,4 +38,10 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
+
+  measure: total_revenue {
+    type: sum
+    sql: ${retail_price} ;;
+  }
+
 }
