@@ -58,4 +58,9 @@ view: users {
     type: string
     sql: ${TABLE}.traffic_source ;;
   }
+
+  dimension: created_at {
+    type: date_time
+    sql: ${TABLE}.created_at ;;
+  }
 }
