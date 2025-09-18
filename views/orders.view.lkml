@@ -16,6 +16,7 @@ view: orders {
   }
   dimension: order_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.order_id ;;
   }
   dimension: status {
