@@ -1,4 +1,4 @@
-view: user_order_summary {
+view: order_facts {
 
   derived_table: {
     sql:
