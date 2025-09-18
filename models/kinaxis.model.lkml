@@ -35,3 +35,12 @@ explore: order_items  {
     sql_on: ${order_items.product_id} =  ${products.id};;
   }
 }
+
+explore: events  {
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${events.user_id} =  ${users.id};;
+  }
+
+}
