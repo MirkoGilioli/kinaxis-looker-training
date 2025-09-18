@@ -13,13 +13,14 @@ view: order_facts {
   }
 
   dimension: order_id {
-    primary_key:  yes
+
     type: number
     sql: ${TABLE}.order_id ;;
   }
 
   dimension: user_id {
     type: number
+    primary_key:  yes
     sql: {TABLE}.user_id ;;
   }
 
