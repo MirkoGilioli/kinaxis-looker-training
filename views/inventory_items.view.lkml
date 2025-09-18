@@ -6,6 +6,7 @@ view: inventory_items {
     sql: ${TABLE}.cost ;;
   }
   dimension: id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -41,4 +42,16 @@ view: inventory_items {
     type: string
     sql: ${TABLE}.product_sku ;;
   }
+  dimension_group: created_at {
+    type: time
+    datatype: timestamp
+    sql: ${TABLE}.created_at ;;
+  }
+
+  dimension_group: sold_at {
+    type: time
+    datatype: timestamp
+    sql: ${TABLE}.sold_at ;;
+  }
+
 }

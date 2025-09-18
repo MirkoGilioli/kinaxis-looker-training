@@ -27,6 +27,7 @@ view: users {
     sql: ${TABLE}.gender ;;
   }
   dimension: id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -58,4 +59,10 @@ view: users {
     type: string
     sql: ${TABLE}.traffic_source ;;
   }
+  dimension_group: created_at {
+    type: time
+    datatype: timestamp
+    sql: ${TABLE}.created_at ;;
+  }
+
 }
