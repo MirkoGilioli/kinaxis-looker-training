@@ -14,6 +14,7 @@ view: events {
     sql: ${TABLE}.event_type ;;
   }
   dimension: id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -48,5 +49,10 @@ view: events {
   dimension: user_id {
     type: number
     sql: ${TABLE}.user_id ;;
+  }
+  dimension_group: created_at {
+    type: time
+    timeframes: [raw, date, week, month, year]
+    sql: ${TABLE}.created_at ;;
   }
 }

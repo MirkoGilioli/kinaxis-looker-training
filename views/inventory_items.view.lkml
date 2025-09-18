@@ -1,44 +1,79 @@
 view: inventory_items {
   sql_table_name: `look_ecommerce.inventory_items` ;;
 
-  dimension: cost {
-    type: number
-    sql: ${TABLE}.cost ;;
-  }
-  dimension: id {
+   dimension: id {
+
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
-  dimension: product_brand {
-    type: string
-    sql: ${TABLE}.product_brand ;;
-  }
-  dimension: product_category {
-    type: string
-    sql: ${TABLE}.product_category ;;
-  }
-  dimension: product_department {
-    type: string
-    sql: ${TABLE}.product_department ;;
-  }
-  dimension: product_distribution_center_id {
+
+  # Foreign Key
+  dimension: user_id {
     type: number
-    sql: ${TABLE}.product_distribution_center_id ;;
+    sql: ${TABLE}.user_id ;;
   }
-  dimension: product_id {
-    type: number
-    sql: ${TABLE}.product_id ;;
-  }
-  dimension: product_name {
+
+  # Attributes
+  dimension: event_type {
     type: string
-    sql: ${TABLE}.product_name ;;
+    sql: ${TABLE}.event_type ;;
   }
-  dimension: product_retail_price {
-    type: number
-    sql: ${TABLE}.product_retail_price ;;
-  }
-  dimension: product_sku {
+
+  dimension: browser {
     type: string
-    sql: ${TABLE}.product_sku ;;
+    sql: ${TABLE}.browser ;;
+  }
+
+  dimension: city {
+    type: string
+    sql: ${TABLE}.city ;;
+  }
+
+  dimension: state {
+    type: string
+    sql: ${TABLE}.state ;;
+  }
+
+  dimension: postal_code {
+    type: string
+    sql: ${TABLE}.postal_code ;;
+  }
+
+  dimension: ip_address {
+    type: string
+    sql: ${TABLE}.ip_address ;;
+  }
+
+  dimension: traffic_source {
+    type: string
+    sql: ${TABLE}.traffic_source ;;
+  }
+
+  dimension: uri {
+    type: string
+    sql: ${TABLE}.uri ;;
+  }
+
+  dimension: session_id {
+    type: string
+    sql: ${TABLE}.session_id ;;
+  }
+
+  dimension: sequence_number {
+    type: number
+    sql: ${TABLE}.sequence_number ;;
+  }
+
+  # Timestamps
+  dimension_group: created_at {
+    type: time
+    timeframes: [raw, date, week, month, year]
+    sql: ${TABLE}.created_at ;;
+  }
+
+  measure: distinct_users {
+    type: count_distinct
+    sql: ${user_id} ;;
   }
 }
