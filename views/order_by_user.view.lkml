@@ -17,12 +17,12 @@ view: order_by_user {
     sql: ${TABLE}.user ;;
   }
 
-  measure: total_revenue {
+  dimension: total_revenue {
     type: number
     sql: ${TABLE}.total_revenue ;;
   }
 
-  measure: total_orders {
+  dimension: total_orders {
     type: number
     sql: ${TABLE}.total_orders ;;
   }
