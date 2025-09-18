@@ -16,6 +16,7 @@ view: events {
   dimension: id {
     type: number
     sql: ${TABLE}.id ;;
+    primary_key: yes
   }
   dimension: ip_address {
     type: string

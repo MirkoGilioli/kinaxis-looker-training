@@ -29,6 +29,7 @@ view: users {
   dimension: id {
     type: number
     sql: ${TABLE}.id ;;
+    primary_key: yes
   }
   dimension: last_name {
     type: string

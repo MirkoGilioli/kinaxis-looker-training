@@ -8,6 +8,7 @@ view: inventory_items {
   dimension: id {
     type: number
     sql: ${TABLE}.id ;;
+    primary_key: yes
   }
   dimension: product_brand {
     type: string
