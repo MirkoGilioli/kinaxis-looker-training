@@ -21,20 +21,20 @@ view: order_facts {
   dimension: user_id {
     type: number
     primary_key:  yes
-    sql: {TABLE}.user_id ;;
+    sql: ${TABLE}.user_id ;;
   }
 
   dimension: order_item_count {
     description: ""
     type: number
-    sql: {TABLE}.order_item_count ;;
+    sql: ${TABLE}.order_item_count ;;
   }
 
   dimension: total_revenue {
     description: ""
     type: number
     value_format: "$#,##0.00"
-    sql: {TABLE}.order_revenue ;;
+    sql: ${TABLE}.order_revenue ;;
   }
 
 }
