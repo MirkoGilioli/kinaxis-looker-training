@@ -15,6 +15,7 @@ view: orders {
     sql: ${TABLE}.num_of_item ;;
   }
   dimension: order_id {
+    primary_key:  yes
     type: number
     sql: ${TABLE}.order_id ;;
   }

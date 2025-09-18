@@ -14,6 +14,7 @@ view: events {
     sql: ${TABLE}.event_type ;;
   }
   dimension: id {
+    primary_key:  yes
     type: number
     sql: ${TABLE}.id ;;
   }
