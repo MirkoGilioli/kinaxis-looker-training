@@ -10,3 +10,38 @@ datagroup: kinaxis_default_datagroup {
 
 persist_with: kinaxis_default_datagroup
 
+explore: order_items {
+  from:  order_items
+
+  join: orders {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_items.order_id} = ${orders.order_id} ;;
+  }
+
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_items.order_id} = ${users.id} ;;
+  }
+
+  join: products {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_items.order_id} = ${products.id} ;;
+  }
+
+  join: inventory_items{
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_items.order_id} = ${inventory_items.id};;
+  }
+}
+
+explore: events {
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${events.user_id} = ${users.id} ;;
+  }
+}
