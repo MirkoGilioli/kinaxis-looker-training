@@ -33,7 +33,6 @@ view: order_items {
     sql: ${TABLE}.status ;;
   }
 
-
   dimension_group: created_at {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
