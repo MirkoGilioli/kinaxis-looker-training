@@ -64,6 +64,11 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  measure: revenue {
+    sql: ${sale_price} ;;
+    type: sum
+  }
+
 
 
 }
