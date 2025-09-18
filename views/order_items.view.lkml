@@ -48,11 +48,12 @@ view: order_items {
   }
   dimension: sales_price {
     type: number
-    sql:  ${TABLE}.sales_price ;;
+    sql:  ${TABLE}.sale_price ;;
   }
 
   measure: total_revenue {
-    sql:  SUM(${TABLE}.sales_price) ;;
+    type: sum
+    sql:  SUM(${TABLE}.sale_price) ;;
   }
 
 }

@@ -13,7 +13,7 @@ persist_with: kinaxis_default_datagroup
 explore: order_items {
   join: users {
     type: left_outer
-    sql_on:  ${order_items.user_id = ${users.id} ;;
+    sql_on:  ${order_items.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
   join: inventory_items {
@@ -23,12 +23,12 @@ explore: order_items {
   }
   join: products {
     type: left_outer
-    sql_on:  ${order_items.product_id = ${products.id} ;;
+    sql_on:  ${order_items.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
   join: orders {
     type: left_outer
-    sql_on:  ${order_items.order_id = ${orders.order_id}id} ;;
+    sql_on:  ${order_items.order_id} = ${orders.order_id}id} ;;
     relationship: many_to_one
   }
 }
@@ -36,7 +36,7 @@ explore: order_items {
 explore: events {
   join: users {
     type: left_outer
-    sql_on:  ${events.user_id = ${users.id} ;;
+    sql_on:  ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
 
