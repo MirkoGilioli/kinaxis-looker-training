@@ -6,6 +6,7 @@ view: inventory_items {
     sql: ${TABLE}.cost ;;
   }
   dimension: id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
