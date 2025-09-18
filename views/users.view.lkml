@@ -14,6 +14,10 @@ view: users {
     map_layer_name: countries
     sql: ${TABLE}.country ;;
   }
+  dimension: created_at {
+    type: date_time
+    sql: ${TABLE}.created_at ;;
+  }
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
