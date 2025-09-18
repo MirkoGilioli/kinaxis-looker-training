@@ -50,4 +50,9 @@ view: order_items {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.returned_at ;;
   }
+
+  measure: total_revenue {
+    type: sum
+    sql: ${sale_price} ;;
+  }
 }
