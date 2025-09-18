@@ -10,3 +10,10 @@ datagroup: kinaxis_default_datagroup {
 
 persist_with: kinaxis_default_datagroup
 
+explore: order_items  {
+  join: users {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_items.user_id} =  ${users.id};;
+  }
+}
