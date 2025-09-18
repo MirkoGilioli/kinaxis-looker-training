@@ -51,6 +51,4 @@ view: order_items {
     sql:  ${TABLE}.sales_price ;;
   }
 
-
-
 }
