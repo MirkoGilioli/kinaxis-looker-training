@@ -1,0 +1,61 @@
+view: users {
+  sql_table_name: `look_ecommerce.users` ;;
+
+  dimension: age {
+    type: number
+    sql: ${TABLE}.age ;;
+  }
+  dimension: city {
+    type: string
+    sql: ${TABLE}.city ;;
+  }
+  dimension: country {
+    type: string
+    map_layer_name: countries
+    sql: ${TABLE}.country ;;
+  }
+  dimension: email {
+    type: string
+    sql: ${TABLE}.email ;;
+  }
+  dimension: first_name {
+    type: string
+    sql: ${TABLE}.first_name ;;
+  }
+  dimension: gender {
+    type: string
+    sql: ${TABLE}.gender ;;
+  }
+  dimension: id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+  dimension: last_name {
+    type: string
+    sql: ${TABLE}.last_name ;;
+  }
+  dimension: latitude {
+    type: number
+    sql: ${TABLE}.latitude ;;
+  }
+  dimension: longitude {
+    type: number
+    sql: ${TABLE}.longitude ;;
+  }
+  dimension: postal_code {
+    type: string
+    sql: ${TABLE}.postal_code ;;
+  }
+  dimension: state {
+    type: string
+    sql: ${TABLE}.state ;;
+  }
+  dimension: street_address {
+    type: string
+    sql: ${TABLE}.street_address ;;
+  }
+  dimension: traffic_source {
+    type: string
+    sql: ${TABLE}.traffic_source ;;
+  }
+}
