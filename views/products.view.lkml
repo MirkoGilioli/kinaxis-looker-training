@@ -23,6 +23,7 @@ view: products {
   }
   dimension: id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.id ;;
   }
   dimension: name {
