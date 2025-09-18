@@ -8,7 +8,6 @@ view: order_items {
   }
   dimension: order_id {
     type: number
-    primary_key: yes
     sql: ${TABLE}.order_id ;;
   }
   dimension: user_id {
@@ -27,20 +26,24 @@ view: order_items {
     type: string
     sql: ${TABLE}.status ;;
   }
-  dimension: created_at {
-    type: date
+  dimension_group: created_at {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
-  dimension: shipped_at {
-    type: date
+  dimension_group: shipped_at {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.shipped_at ;;
   }
-  dimension: delivered_at {
-    type: date
+  dimension_group: delivered_at {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.delivered_at ;;
   }
-  dimension: returned_at {
-    type: date
+  dimension_group: returned_at {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.returned_at ;;
   }
   dimension: sales_price {
