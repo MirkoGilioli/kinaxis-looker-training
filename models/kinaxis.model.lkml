@@ -36,6 +36,12 @@ explore: order_items {
     relationship: many_to_one
     sql_on: ${order_items.order_id} = ${inventory_items.id};;
   }
+
+  join: order_by_user {
+    type: left_outer
+    sql_on: ${order_items.user_id} = ${order_by_user.user_id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: events {
