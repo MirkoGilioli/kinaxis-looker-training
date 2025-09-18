@@ -36,4 +36,30 @@ explore: order_items {
 
   }
 }
+
+explore: user_order_summary {
+  from:  user_order_summary
+
+  join: users {
+    type:  inner
+    sql_on: ${user_order_summary.user_id} = ${users.id} ;;
+    relationship: one_to_one
+  }
+}
+
+explore: events {
+  from:  events
+
+  join: users {
+    type:  inner
+    sql_on: ${events.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+
+  join: user_order_summary {
+    type:  left_outer
+    sql_on: ${events.user_id} = ${user_order_summary.user_id} ;;
+    relationship: many_to_one
+  }
+}
 persist_with: kinaxis_default_datagroup
