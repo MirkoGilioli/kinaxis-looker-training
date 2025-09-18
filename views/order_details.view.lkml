@@ -18,13 +18,13 @@ view: order_details {
     primary_key: yes
   }
 
-  measure: total_orders {
-    type: sum
+  dimension: total_orders {
+    type: number
     sql: ${TABLE}.total_orders ;;
   }
 
-  measure: total_revenue {
-    type: sum
+  dimension: total_revenue {
+    type: number
     sql: ${TABLE}.total_revenue ;;
   }
 }
