@@ -78,4 +78,8 @@ view: order_items {
     type: count_distinct
     sql:  ${order_id} ;;
   }
+
+  measure: count {
+    type:  count
+  }
 }
