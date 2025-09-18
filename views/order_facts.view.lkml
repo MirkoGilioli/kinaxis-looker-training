@@ -9,7 +9,7 @@ view: order_facts {
           FROM
             order_items
           GROUP BY
-            order_id, user_i;;
+            order_id, user_id;;
   }
 
   dimension: order_id {
