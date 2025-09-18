@@ -22,6 +22,7 @@ view: products {
     sql: ${TABLE}.distribution_center_id ;;
   }
   dimension: id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
