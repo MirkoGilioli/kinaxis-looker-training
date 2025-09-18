@@ -1,7 +1,7 @@
 view: order_items {
   sql_table_name: `look_ecommerce.order_items` ;;
 
-    dimension: id {
+  dimension: id {
     type: number
     primary_key: yes
     sql: ${TABLE}.id ;;
@@ -11,7 +11,6 @@ view: order_items {
     type: number
     sql: ${TABLE}.order_id ;;
   }
-
 
   dimension: user_id {
     type: number
@@ -40,7 +39,6 @@ view: order_items {
     sql: ${TABLE}.created_at ;;
   }
 
-
   dimension_group: shipped {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
@@ -62,5 +60,10 @@ view: order_items {
   dimension: sale_price {
     type: number
     sql: ${TABLE}.sale_price ;;
+  }
+
+  measure: revenue {
+    sql: ${sale_price} ;;
+    type: sum
   }
 }
