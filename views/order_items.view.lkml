@@ -1,4 +1,6 @@
+include: "base.view"
 view: order_items {
+  extends: [base]
   sql_table_name: `look_ecommerce.order_items` ;;
 
   dimension: id

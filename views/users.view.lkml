@@ -1,4 +1,6 @@
+include: "base.view"
 view: users {
+  extends: [base]
   sql_table_name: `look_ecommerce.users` ;;
 
   dimension: age {
@@ -25,11 +27,6 @@ view: users {
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
-  }
-  dimension: id {
-    primary_key:  yes
-    type: number
-    sql: ${TABLE}.id ;;
   }
   dimension: last_name {
     type: string

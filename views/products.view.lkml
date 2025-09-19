@@ -1,4 +1,6 @@
+include: "base.view"
 view: products {
+  extends: [base]
   sql_table_name: `look_ecommerce.products` ;;
 
   dimension: brand {
@@ -20,11 +22,6 @@ view: products {
   dimension: distribution_center_id {
     type: number
     sql: ${TABLE}.distribution_center_id ;;
-  }
-  dimension: id {
-    primary_key: yes
-    type: number
-    sql: ${TABLE}.id ;;
   }
   dimension: name {
     type: string

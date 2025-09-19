@@ -1,4 +1,6 @@
+include: "base.view"
 view: events {
+  extends: [base]
   sql_table_name: `look_ecommerce.events` ;;
 
   dimension: browser {
@@ -13,11 +15,7 @@ view: events {
     type: string
     sql: ${TABLE}.event_type ;;
   }
-  dimension: id {
-    primary_key:  yes
-    type: number
-    sql: ${TABLE}.id ;;
-  }
+
   dimension: ip_address {
     type: string
     sql: ${TABLE}.ip_address ;;

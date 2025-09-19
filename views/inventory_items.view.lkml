@@ -1,15 +1,13 @@
+include: "base.view"
 view: inventory_items {
+  extends: [base]
   sql_table_name: `look_ecommerce.inventory_items` ;;
 
   dimension: cost {
     type: number
     sql: ${TABLE}.cost ;;
   }
-  dimension: id {
-    primary_key:  yes
-    type: number
-    sql: ${TABLE}.id ;;
-  }
+
   dimension: product_brand {
     type: string
     sql: ${TABLE}.product_brand ;;
