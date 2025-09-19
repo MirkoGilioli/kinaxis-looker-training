@@ -68,7 +68,13 @@ view: order_items {
     sql: ${sale_price} ;;
     type: sum
   }
+}
 
-
-
+test: sale_price_non_negative{
+  explore_source: order_items {
+    column: sale_price {field: order_items.sale_price}
+  }
+  assert: positive_count {
+    expression: ${order_items.sale_price} >=0 ;;
+  }
 }
