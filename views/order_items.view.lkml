@@ -55,4 +55,23 @@ view: order_items {
     type: sum
     sql: ${sale_price} ;;
   }
+
+}
+
+test: sale_price_non_negative{
+  explore_source: order_items {
+    column: sale_price {field: order_items.sale_price}
+  }
+  assert: positive_count {
+    expression: ${order_items.sale_price} >=0 ;;
+  }
+}
+
+test: count_orders_positive  {
+  explore_source: order_items {
+    column: total_num_orders {field: order_by_user.total_num_orders}
+  }
+  assert: count_orders_positive {
+    expression: ${order_by_user.total_num_orders} >= 0 ;;
+    }
 }
