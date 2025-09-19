@@ -58,4 +58,14 @@ view: order_items {
     type: sum
     sql: ${sale_price} ;;
   }
+
+}
+
+test: sale_price_non_negative{
+  explore_source: order_items {
+    column: sale_price {field:order_items_sale_price}
+  }
+  assert: positive {
+    expression: $(sale_price)>=0;;
+  }
 }
